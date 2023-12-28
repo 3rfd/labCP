@@ -1,0 +1,18 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+Vagrant.configure("2") do |config|
+   
+    config.vm.box = "generic/ubuntu1804"
+  
+    
+    config.vm.provision "shell", inline: <<-SHELL
+      echo sudo apt-get update
+      apt-get update
+      wget https://packages.microsoft.com/config/ubuntu/18.04/packages-microsoft-prod.deb -O packages-microsoft-prod.deb
+      sudo dpkg -i packages-microsoft-prod.deb
+      rm packages-microsoft-prod.deb
+      sudo apt-get update && sudo apt-get install -y dotnet-sdk-6.0
+      dotnet tool install --global --version 1.0.0 --add-source http://192.168.0.104:5555/v3/index.json --no-cache Lab4
+    SHELL
+  end

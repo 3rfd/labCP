@@ -1,0 +1,28 @@
+Vagrant.configure("2") do |config|
+    config.vm.box = "tas50/macos_10.15"
+
+    config.vm.provider "virtualbox" do |vb|
+        vb.memory = "4096"
+        
+        vb.customize ["modifyvm", :id, "--cpuidset", "00000001","000106e5","00100800","0098e3fd","bfebfbff"]
+        
+
+        vb.customize ["setextradata", :id, "VBoxInternal/Devices/efi/0/Config/DmiSystemProduct", "iMac19,1"]
+        vb.customize ["setextradata", :id, "VBoxInternal/Devices/efi/0/Config/DmiSystemVersion", "1.0"]
+        vb.customize ["setextradata", :id, "VBoxInternal/Devices/efi/0/Config/DmiBoardProduct", "Iloveapple"]
+        vb.customize ["setextradata", :id, "VBoxInternal/Devices/smc/0/Config/DeviceKey", "ourhardworkbythesewordsguardedpleasedontsteal(c)AppleComputerInc"]
+        vb.customize ["setextradata", :id, "VBoxInternal/Devices/smc/0/Config/GetKeyFromRealSMC", "0"]
+        vb.customize ["setextradata", :id, "VBoxInternal/TM/TSCMode", "RealTSCOffset"]
+    end
+
+    config.vm.provision "shell", inline: <<-SHELL
+    curl "https://download.visualstudio.microsoft.com/download/pr/3b305e51-67fb-47cf-a916-700e62148324/1b71cd10822a3a1805008e212157a178/dotnet-sdk-6.0.416-osx-x64.pkg" \
+    -o dotnet_installer.pkg
+    sudo installer -pkg dotnet_installer.pkg -target /
+    sudo mkdir -p -m 775 /usr/local/bin
+    sudo ln -s /usr/local/share/dotnet/dotnet /usr/local/bin/
+    dotnet tool install --global --version 1.0.0 --add-source http://192.168.0.104:5555/v3/index.json --no-cache Lab4
+    sudo ln -s /usr/local/share/Lab4 /usr/local/bin/
+    SHELL
+
+end

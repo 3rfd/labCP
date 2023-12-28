@@ -1,0 +1,9 @@
+C:\Users\kovtu\source\repos\Lab4\LabRunner\bin\Release\net6.0\LabRunner.deps.json
+C:\Users\kovtu\source\repos\Lab4\LabRunner\bin\Release\net6.0\LabRunner.dll
+C:\Users\kovtu\source\repos\Lab4\LabRunner\bin\Release\net6.0\LabRunner.pdb
+C:\Users\kovtu\source\repos\Lab4\LabRunner\obj\Release\net6.0\LabRunner.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\kovtu\source\repos\Lab4\LabRunner\obj\Release\net6.0\LabRunner.csproj.CoreCompileInputs.cache
+C:\Users\kovtu\source\repos\Lab4\LabRunner\obj\Release\net6.0\LabRunner.dll
+C:\Users\kovtu\source\repos\Lab4\LabRunner\obj\Release\net6.0\refint\LabRunner.dll
+C:\Users\kovtu\source\repos\Lab4\LabRunner\obj\Release\net6.0\LabRunner.pdb
+C:\Users\kovtu\source\repos\Lab4\LabRunner\obj\Release\net6.0\ref\LabRunner.dll

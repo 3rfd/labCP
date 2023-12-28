@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>LabRunner</id>
+    <version>1.0.0</version>
+    <authors>LabRunner</authors>
+    <description>Package Description</description>
+    <repository type="git" />
+    <dependencies>
+      <group targetFramework="net6.0" />
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="C:\Users\kovtu\source\repos\Lab4\LabRunner\bin\Release\net6.0\LabRunner.dll" target="lib\net6.0\LabRunner.dll" />
+  </files>
+</package>

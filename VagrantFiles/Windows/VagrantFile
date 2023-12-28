@@ -1,0 +1,25 @@
+
+Vagrant.configure("2") do |config|
+ 
+  config.vm.box = "gusztavvargadr/windows-10"
+
+ 
+  config.vm.provider "virtualbox" do |vb|
+   
+    vb.gui = true
+  
+    
+    vb.memory = "4096"
+
+    vb.customize ["modifyvm", :id, "--cpuidset", "1","000206a7","02100800","1fbae3bf","bfebfbff"]
+  end
+ 
+  config.vm.provision "shell", inline: <<-SHELL
+    Invoke-WebRequest -Uri https://dot.net/v1/dotnet-install.ps1 -OutFile dotnet-install.ps1
+    ./dotnet-install.ps1 -Version 6.0.416 -InstallDir "C:\\Program Files\\dotnet"
+    rm ./dotnet-install.ps1
+    $env:Path = $env:Path + ";C:\\Program Files\\dotnet"
+    dotnet tool install --global --version 1.0.0 --add-source http://192.168.0.104:5555/v3/index.json --no-cache Lab4
+  SHELL
+
+end

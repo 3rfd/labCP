@@ -1,0 +1,3 @@
+C:\Users\kovtu\source\repos\Lab4\LabRunner\bin\Release\net6.0\publish\LabRunner.dll
+C:\Users\kovtu\source\repos\Lab4\LabRunner\bin\Release\net6.0\publish\LabRunner.deps.json
+C:\Users\kovtu\source\repos\Lab4\LabRunner\bin\Release\net6.0\publish\LabRunner.pdb
